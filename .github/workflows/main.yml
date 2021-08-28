@@ -4,7 +4,7 @@ env:
   image-name: "test"
   path-to-dockerfile : "Dockerfile"
   
-name: ${{ workflow-name }}
+name: ${{ env.workflow-name }}
 
 # Controls when the workflow will run
 on:
