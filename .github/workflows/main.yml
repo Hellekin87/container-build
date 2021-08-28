@@ -27,3 +27,6 @@ jobs:
 
       - name: Build the Docker image
         run: docker build . --file ${{ env.path-to-dockerfile }} --tag ${{ env.image-name }}:$(date +%s)
+        
+      - name: Push image
+        run: docker push ${{ env.image-name }}:$(date +%s)
