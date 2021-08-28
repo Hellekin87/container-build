@@ -1,11 +1,9 @@
 # This is a basic workflow to help you get started with Actions
+name: "docker image build"
 env:
-  workflow-name: "docker image build"
   image-name: "test"
   path-to-dockerfile : "Dockerfile"
   
-name: ${{ env.workflow-name }}
-
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
