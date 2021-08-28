@@ -3,6 +3,7 @@ name: "docker image build"
 env:
   image-name: "test"
   path-to-dockerfile : "Dockerfile"
+  repo-name: "mabi"
   
 # Controls when the workflow will run
 on:
@@ -26,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build the Docker image
-        run: docker build . --file ${{ env.path-to-dockerfile }} --tag ${{ env.image-name }}:$(date +%s)
+        run: docker build . --file ${{ env.path-to-dockerfile }} --tag ${{ env.repo-name }}:${{ env.image-name }}
         
       - name: Push image
-        run: docker push ${{ env.image-name }}:$(date +%s)
+        run: docker push ${{ env.repo-name }}:${{ env.image-name }}
